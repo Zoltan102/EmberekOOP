@@ -15,24 +15,24 @@ public class Ember {
         this.szulHely = szulHely;
     }
 
-    public int getSzulEv(){
+    public int getSzulEv() {
         return Integer.parseInt(szulDatum.substring(0, 4));
     }
 
-    public  int getSzulHo(){
+    public int getSzulHo() {
         return Integer.parseInt(szulDatum.split("-")[1]);
     }
 
-    public  int getSzulNap(){
+    public int getSzulNap() {
         return Integer.parseInt(szulDatum.split("-")[2]);
     }
 
-    public int getEletkor(){
+    public int getEletkor() {
         return LocalDate.now().getYear() - getSzulEv();
     }
 
     @Override
     public String toString() {
-        return String.format("%-30s %10s %20s %d %d", nev, szulDatum, szulHely, getSzulEv(), getEletkor());
+        return String.format("%-30s %10s %d %20s", nev, szulDatum, getEletkor(), szulHely);
     }
 }
