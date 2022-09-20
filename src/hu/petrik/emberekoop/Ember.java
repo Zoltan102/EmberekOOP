@@ -1,10 +1,6 @@
 package hu.petrik.emberekoop;
 
-import com.sun.org.apache.bcel.internal.classfile.LocalVariable;
-
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
 
 public class Ember {
     private String nev;
