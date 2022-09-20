@@ -1,5 +1,7 @@
 package hu.petrik.emberekoop;
 
+import com.sun.org.apache.bcel.internal.classfile.LocalVariable;
+
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
@@ -28,7 +30,11 @@ public class Ember {
     }
 
     public int getEletkor() {
-        return LocalDate.now().getYear() - getSzulEv();
+        if (LocalDate.now().getMonthValue() <= getSzulHo() && LocalDate.now().getDayOfMonth() <= getSzulNap()) {
+            return LocalDate.now().getYear() - getSzulEv();
+        } else {
+            return (LocalDate.now().getYear() - getSzulEv()) - 1;
+        }
     }
 
     @Override
